@@ -4,7 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\creditSimulator;
+use App\Models\CreditSimulator;
 
 class CreditSimulatorController extends Controller
 {
@@ -94,7 +94,7 @@ class CreditSimulatorController extends Controller
 
     protected function validatesReportedParameters($payload)
     {
-        $simulator = new creditSimulator();
+        $simulator = new CreditSimulator();
         $payload_params = array_keys(get_object_vars($payload));
 
         if(in_array('valor', $payload_params) == false) {
